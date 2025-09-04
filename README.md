@@ -105,3 +105,43 @@ else:
 
 print(f"A média das notas é {media}\n Você foi {situacao}")
 ```
+
+## Operadores relacionais
+
+Eles permitem avaliar as relações entre valore, respondendo à perguntas. A estrutura condicional guia a tomada de decisões na execução do algoritmo.
+
+(< ) estritamente menor que
+
+(<=) menor ou igual
+
+(.>) estritamente maior que
+
+(.>=) maior ou igual que
+
+(==) igual
+
+(!=) diferente
+
+(is) identidade do objeto
+
+(is not) negação da identidade do objeto
+
+## Estruturas lógicas
+
+São como peças de quebra-cabeça que unem condições para critérios mais complexos. São elas que nos permitem tomar decisões mais elaboradas, combinando várias comparações.
+
+E (and)
+
+OU (or)
+
+NÃO (not)
+
+## Operadores booleanos
+
+São essenciais para a criação de estruturas sofisticadas permitindo que os programas lidem com uma variedade de situações e critérios lógicos.
+
+Eles são usados para controlar o fluxo de execução com base em condições complexas.
+
+```
+
+```
