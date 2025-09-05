@@ -161,3 +161,144 @@ if ingressos > 0:
 else:
     print("\nDesculpe, todos os ingressos estão esgotados para hoje!\n\n")
 ```
+
+## elif
+
+Seu uso propicia:
+
+1. Avaliação em sequência
+2. Verificação múltipla
+3. Flexibilidade
+
+> Na programação, a criação de algortimos pararesolver problemas envolve a capacidade de tomar decisões. Tais decisões são guiadas por uma técnica chama "estrutura condicional" (Manzano; Oliveira, 2019).
+
+## Estruturas de repetição
+
+- estrutura de repetição for
+- estrutura de repetição while
+- controle de fluxo de repetição range, break e continue
+
+## for
+
+Permite percorrer uma sequência de elementos, como uma lista e executar ações para cada item.
+
+Permite realizar ações repetitivas de maneira controlada.
+
+É especialmente útil quando sabemos previuamente quantas vezes repetir uma ação ou quando temos uma lista de itens a serem processados.
+
+```
+numeros = [1, 2, 3, 4, 5]
+
+for num in numeros:
+    print(num)
+```
+
+## while
+
+Para ter controle das repetições ou ter uma condição atendida o while permite tal controle.
+
+É usado para criar estruturas de repetição quando o número de repetições não é conhecido antecipadamente. A execução de continuar até uma condição específica ser atendida.
+
+```
+numero = int(input("\nDigite um número ou 0 para sair: "))
+
+while numero != 0:
+    if numero % 2 == 0:
+        print(f"\nO número {numero} é par")
+        break
+    else:
+        print(f"\nO número {numero} é ímpar")
+        break
+
+#o break força a saído do bloco de código e continua executando o algoritmo
+```
+
+## Controle de repetição range break e continue
+
+A função **range()** é uma ferramenta útil para criar sequências numéricas que podem ser usadas em estruturas de repetição, com o comando **for**. Ela especifica os limitese o incremento da sequência.
+
+### Método 1 - repetição por quantidade
+
+```
+# loop de repetição por quantidade
+
+for x in range(5):
+    print(x)
+
+#não preciso de um array de números o interpretador entende o contexto do
+#parâmetro
+```
+
+### Método 2 - limites inicial e superior
+
+```
+#loop com limite inicial e incremento
+
+for y in range(2, 7):
+    print(y)
+
+#o início é sempre intervalo fechado (conta o número)
+#o fim sempre intervalo aberto (não conta o número)
+```
+
+### Método 3 - com incremento
+
+```
+for z in range(1, 11, 2):
+    print(z)
+
+#primeiro indicador - início
+#segundo indicado - limite
+#terceiro indicador - incremento
+```
+
+## break
+
+É usado para interromper a execução de uma estrutura de repetição quando uma condição é atendida. Esse comando permite sair do loop antes que ele seja concluído.
+
+## continue
+
+É usado para pular a iteração atual em uma estrutura de repetição e continuar co a próxima iteração. Isso é vantajoso quando se deseja ignorar uma iteração com base em uma condição, mas quer continuar com o restante do loop.
+
+```
+for numero in range (1, 11):
+    if numero == 5:
+        continue
+    print(numero)
+
+#ignora a posição de iteração
+```
+
+## Exercício
+
+```
+filmes = [
+    "O Senhor dos Anéis",
+    "Harry Potter",
+    "Percy Jackson",
+    "Piratas do Caribe",
+    "Crepúsculo"
+]
+
+print()
+print()
+print()
+
+for filme in filmes:
+    classificacao = int(input(f"\nDigite a nota de 1 a 5
+    para {filme} ou zero para sair: "))
+
+while True:
+
+    if classificacao == 0:
+        print(f"\n{filme} interrompido")
+        break
+    elif classificacao < 1 or classificacao > 5:
+        print()
+    else:
+        print(f"\n{filme} com {classificacao} estrela(s)")
+        break
+print()
+```
+
+Nessa solução, utilizamos **while True:**, que é uma técnica comum para criar loops em que a condição de parada pode variar ou não é conhecida, visto que o usuário pode parar a classifiucação escolhendo 0 ou encerrá-lo depois de classificar todos os cinco filmes.
