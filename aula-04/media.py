@@ -1,3 +1,7 @@
+# 1. calcular a média
+# 2. arredondar a média
+# 3. informar se foi aprovado ou reprovado
+
 notas = [8.0, 7.5, 6.5, 9.75]
 
 def calcular_media(notas):
@@ -21,4 +25,3 @@ print(notas)
 print(f"A média é: {media}")
 print(f"A média arredondada: {media_arredondada}")
 print(f"O aluno está: {situacao}")
-

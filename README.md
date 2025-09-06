@@ -302,3 +302,101 @@ print()
 ```
 
 Nessa solução, utilizamos **while True:**, que é uma técnica comum para criar loops em que a condição de parada pode variar ou não é conhecida, visto que o usuário pode parar a classifiucação escolhendo 0 ou encerrá-lo depois de classificar todos os cinco filmes.
+
+## Funções em Python
+
+### Funções built-in
+
+São blocos de código pré-implementados e incorporados diretamente na linguagem, consitituindo um conjunto essencial de ferramentas que estão prontamente disponíveis para programadores.
+
+O Python possui um repertório de 70 funções built-in (pré-construídas)
+
+- print()
+- input()
+- int()
+- range()
+
+### Função len()
+
+Calcula o comprimento de uma lista
+
+```
+# cria uma lista de números
+numeros = [1, 2, 3, 4, 5]
+
+# conta o comprimento da lista
+numero_elementos = len(numeros)
+
+# imprime a quantidade de elementos
+print(numero_elementos)
+```
+
+### Função definida pelo usuário (com retorno de parâmetro)
+
+As funções definidas pelo usuário são criadas pelo programador para atender requisitos específicos dentro de um programa.
+
+```
+# função soma
+def soma(a, b):
+    resultado = a + b
+    return resultado
+
+# função classificar número par
+def e_par(numero):
+    if numero % 2 == 0:
+        return True
+    else:
+        return False
+
+# chamando uma função
+print(soma(3, 5))
+print(e_par(100))
+
+```
+
+### Funções anônimas
+
+Conhecidas como funções **lambda**, são declaradas sem a necessidade de um nome, permitindo que sejam definidas e utilizadas no local em que são necessárias.
+
+São úteis para uma ação simples que será usada penas uma vez.
+
+```
+soma = lambda a, b: a + b
+resultado = soma(3, 4)
+
+print(resultado)
+```
+
+## Exercício
+
+1. calcular a média
+2. arredondar a média
+3. informar se foi aprovado ou reprovado
+
+```
+
+notas = [8.0, 7.5, 6.5, 9.75]
+
+def calcular_media(notas):
+    total = sum(notas)
+    media = total / len(notas)
+    return media
+
+def informar_situacao(media):
+    if media >= 7:
+        return "Aprovado"
+    else:
+        return "Reprovado"
+
+arredondar_media = lambda media: round(media, 2)
+
+media = calcular_media(notas)
+media_arredondada = arredondar_media(media)
+situacao = informar_situacao(media)
+
+print(notas)
+print(f"A média é: {media}")
+print(f"A média arredondada: {media_arredondada}")
+print(f"O aluno está: {situacao}")
+
+```
