@@ -367,6 +367,14 @@ resultado = soma(3, 4)
 print(resultado)
 ```
 
+### Função round
+
+Usada para fazer o arredondamento de casas decimais
+
+```
+numero = round(numero)
+```
+
 ## Exercício
 
 1. calcular a média
