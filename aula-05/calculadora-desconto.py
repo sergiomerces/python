@@ -10,7 +10,7 @@ valor_produto = float(input("Valor do Produto R$: "))
 percentual_desconto = float(input("Percentual de Desconto  %: "))
 
 while percentual_desconto <= 0 or percentual_desconto > 100:
-    percentual_desconto = float(input("Informe um valor valido em %: "))
+    percentual_desconto = float(input("Informe um valor válido em %: "))
     
 desconto = lambda preco, percentual: preco * (percentual/100)
 valor_produto = round(valor_produto, 2)
