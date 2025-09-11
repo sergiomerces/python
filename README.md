@@ -22,6 +22,19 @@
 ### IDES
 
 **PyCharm** - da JetBrains
+Para instalar acessar a página da JetBrains baixar a versão mais compatível com sua
+distro, estou usando o PopOS! LTS 22.04. logo optei pela versão do 2022.3.3
+Descompactar para o diretório /opt.
+
+```
+$ sudo tar xzf pycharm-*.tar.gz -C /opt/
+$ cd /opt/
+# acessar o diretório do Pycharm
+$ cd bin/
+$ sh pycharm
+
+``` 
+
 
 **Visual Studio Code** da Microsoft
 
@@ -408,3 +421,17 @@ print(f"A média arredondada: {media_arredondada}")
 print(f"O aluno está: {situacao}")
 
 ```
+## Estruturas de Dados em Python
+
+### Objetos do tipo sequência
+
+Sequências são estruturas de dados que nos permitem armazenar coleções ordenadas
+de informações.
+
+- coleções versáteis podem incluir elementos de tipos diferentes
+- organizam dados em ordem específica
+- são indexados por números inteiros positivos
+- primeiro índice da sequência acessado pleo indice zero (0)
+
+## Operações comuns com sequências
+
