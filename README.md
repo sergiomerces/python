@@ -489,8 +489,6 @@ print(f"As 5 primeiras letras são = {texto[:5]}")
 - forma fundamental de objetos do tipo sequência
 - são mutáveis, podemos adcionar, remover e alterar elementos
 
-Lista de cores:
-
 ```
 cores = ['vermelho', 'azul', 'verde', 'amarelo', 'rosa']
 
@@ -503,7 +501,10 @@ for cor in cores:
 
 ```
 
-Lista de linguagens:
+## List comprehensions ou listcomps
+
+- cria uma nova lista com base em um objeto iterável
+- útil para transformar ou filtrar as informações de u sequência existente para construir uma nova sequência com as informações desejadas.
 
 ```
 linguagens = ['Python', 'Java', 'Javascript', 'C', 'C#', 'C++', 'Swift', 'Go', 'Kotlin']
@@ -514,4 +515,31 @@ print("\nAntes da listcomp = ", linguagens)
 linguagens = [item.lower() for item in linguagens]
 
 print("Depois da listcomp ", linguagens)
+```
+
+### Função map
+
+A função map associada a uma função lambda transforma nesse exemplo uma lista de valores em reais em outra com valores em dólares.
+
+```
+preco_em_dolares = [100, 50, 75, 120]
+taxa_de_cambio = 5.25
+
+preco_em_reais = list(map(lambda x: x * taxa_de_cambio, preco_em_dolares))
+
+print(preco_em_dolares)
+print(preco_em_reais)
+```
+
+### Função filter
+
+Filtra elementos de uma sequência com base nos critérios de uma função.
+
+```
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+numeros_pares = list(filter(lambda x: x % 2 == 0, numeros))
+
+print(numeros_pares)
+
 ```
