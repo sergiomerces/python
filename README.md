@@ -9,7 +9,7 @@
 - desenvolvimento web, automação, aprendizado de máquina e análise de dados
 - PEP8
   - indentação com 4 espaços (não tabulações)
-  - uso de nomes descritivos minúsculos para variáveis minha_variavel
+  - uso de nomes descritivos minúsculos para variáveis minha_variavel (notação snake case)
     uso de letras maiúsculas separadas por sublinhado para nomes de classes MINHA_CLASSE
   - comprimento de linha de código com 79 caracteres
     importações organizadas em forma ordenada e agrupada em seções
@@ -23,7 +23,7 @@
 
 **PyCharm** - da JetBrains
 Para instalar acessar a página da JetBrains baixar a versão mais compatível com sua
-distro, estou usando o PopOS! LTS 22.04. logo optei pela versão do 2022.3.3
+distro, estou usando o PopOS! LTS 22.04; logo optei pela versão do PyCharm Community 2022.3.3
 Descompactar para o diretório /opt.
 
 ```
@@ -33,14 +33,24 @@ $ cd /opt/
 $ cd bin/
 $ sh pycharm
 
-``` 
-
+```
 
 **Visual Studio Code** da Microsoft
+Instalação
+Extensões:
 
-**Jupyter Notebook**
+- Python
+- Pylance
+- Python Debugger
+- Python Enviroments
 
-**Google Collab**
+Todas da Microsoft.
+
+Opções online:
+
+- **Jupyter Notebook**
+
+  **Google Collab**
 
 ## Saída de dados
 
@@ -421,6 +431,7 @@ print(f"A média arredondada: {media_arredondada}")
 print(f"O aluno está: {situacao}")
 
 ```
+
 ## Estruturas de Dados em Python
 
 ### Objetos do tipo sequência
@@ -434,4 +445,3 @@ de informações.
 - primeiro índice da sequência acessado pleo indice zero (0)
 
 ## Operações comuns com sequências
-
