@@ -436,12 +436,82 @@ print(f"O aluno está: {situacao}")
 
 ### Objetos do tipo sequência
 
-Sequências são estruturas de dados que nos permitem armazenar coleções ordenadas
-de informações.
+Sequências são estruturas de dados que nos permitem armazenar coleções ordenadas de informações.
 
-- coleções versáteis podem incluir elementos de tipos diferentes
+- coleções são versáteis podem incluir elementos de tipos diferentes
 - organizam dados em ordem específica
 - são indexados por números inteiros positivos
 - primeiro índice da sequência acessado pleo indice zero (0)
 
 ## Operações comuns com sequências
+
+**x in s** True caso um item de s seja igual a x
+
+**s + t** concatenação de s e t
+
+**n \* s** adiciona s a si mesmo n vezes (multiplicação)
+
+**s[i]** acessa o valor guardado na posição i da sequência
+
+**s[i:j]** acessa os valores da posição de i até j
+
+**s[i:j:k]** acessa valores da posição i até j, com passo k
+
+**len(s)** comprimento de s
+
+**min(s)** menor valor de s
+
+**max(s)** maior valor de s
+
+\*\*s.count(x)\*\* número total de ocorrências de x em s
+
+Um texto é representado por objetos da classe string, pode ser manipulado por diversas das operações vistas, porém uma string é imutável.
+
+```
+texto = "Explorando a diversidade de linguagens de programação com Python."
+
+# imprime o tamanho da string
+print(f"O tamanho do texto é = {len(texto)}")
+
+# retorna se o termo Python faz parte do texto
+print(f"Python in texto = {'Python' in texto}")
+
+# retorna quantidade de letras 'e' no texto
+print(f"Quantidade de 'e' no texto = {texto.count('e')}")
+
+# retorna os 5 primeiros caracteres do texto
+print(f"As 5 primeiras letras são = {texto[:5]}")
+
+```
+
+## Listas
+
+- forma fundamental de objetos do tipo sequência
+- são mutáveis, podemos adcionar, remover e alterar elementos
+
+Lista de cores:
+
+```
+cores = ['vermelho', 'azul', 'verde', 'amarelo', 'rosa']
+
+for cor in cores:
+    print(cor)
+
+for cor in cores:
+    # cores.index acessa o índice de cada cor do laço
+    print(f"Posicao: {cores.index(cor)}, cor: {cor}")
+
+```
+
+Lista de linguagens:
+
+```
+linguagens = ['Python', 'Java', 'Javascript', 'C', 'C#', 'C++', 'Swift', 'Go', 'Kotlin']
+
+print("\nAntes da listcomp = ", linguagens)
+
+#  .lower() converte todo texto para letras minúsculas
+linguagens = [item.lower() for item in linguagens]
+
+print("Depois da listcomp ", linguagens)
+```
