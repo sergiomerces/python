@@ -484,7 +484,7 @@ print(f"As 5 primeiras letras são = {texto[:5]}")
 
 ```
 
-## Listas
+## Objeto tipo Lista
 
 - forma fundamental de objetos do tipo sequência
 - são mutáveis, podemos adcionar, remover e alterar elementos
@@ -544,7 +544,7 @@ print(numeros_pares)
 
 ```
 
-## Tupla
+## Objeto tipo Tupla
 
 - são sequências como as listas porém são imutáveis
 - usam parênteses como delimitadores ao invés de colchetes como nas listas
@@ -561,4 +561,77 @@ print(f"Tipo de objeto vogais = {type(vogais)}")
 
 for p, x in enumerate(vogais):
     print(f"Posição = {p}, Valor = {x}")
+```
+
+## Objetos tipo Set
+
+- estratura de dados semelhante a conjuntos matemáticos
+- operações de união, interseção, diferença e outras
+- útil para realizar testes de associação e eliminar duplicatas
+- são delimitados por chaves
+
+```
+set1 = {'a', 'b', 'c'}
+
+# usando construtor set()
+meu_conjunto = set()
+
+# adicionando elementos ao conjunto
+meu_conjunto.add(10)
+meu_conjunto.add(20)
+meu_conjunto(30)
+
+#removendo elemento
+meu_conjunto.remove(20)
+```
+
+## Objeto tipo Mapping
+
+- estruturas entre chaves e valores
+- principal objeto é o dicionário
+- tipo **dict**
+- mutáveis
+
+```
+dicionario1 = {}
+
+dicionario2 = {'um': 1, 'dois': dois, 'tres': 3}
+
+```
+
+Exemplos:
+
+```
+# exemplo 1 - criação de um dicionario vazio seguido de atribuição
+dici_1 = {}
+dici_1['nome'] = 'Maria'
+dici_1['idade'] = 25
+
+# exemplo 2 - criação de um dicionário com par de chave e valor
+dici_2 = {'nome': 'Maria', 'idade': 25}
+
+# exemplo 3 - criação de um dicionário com uma lista de tuplas representandopares chave e valor
+dici_3 = dict([('nome', 'Maria'), ('idade', 25)])
+
+# exemplo 4 - criação de um dicionário usando a funçaõ built-in zip() e duas listas
+dici_4 = dict(zip(['nome', 'idade'], ['Maria', 25]))
+
+# teste se todas as construções são objetos iguais
+print(dici_1 == dici_2 == dici_3 == dici_4)
+
+```
+
+Dicionários são úteis para armazenar informações associadas por chaves exclusivas.
+
+## Biblioteca NumPy
+
+- oferece várias funcionalidades
+- arrays multidimensionais (matrizes)
+- integração com C/C++ e Fortran
+- recursos de álgebra linear
+
+Para instalar a biblioteca
+
+```
+$ pip install numpy
 ```
