@@ -501,7 +501,7 @@ for cor in cores:
 
 ```
 
-## List comprehensions ou listcomps
+### List comprehensions ou listcomps
 
 - cria uma nova lista com base em um objeto iterável
 - útil para transformar ou filtrar as informações de u sequência existente para construir uma nova sequência com as informações desejadas.
@@ -542,4 +542,23 @@ numeros_pares = list(filter(lambda x: x % 2 == 0, numeros))
 
 print(numeros_pares)
 
+```
+
+## Tupla
+
+- são sequências como as listas porém são imutáveis
+- usam parênteses como delimitadores ao invés de colchetes como nas listas
+- permite a atribuição de valores à posições específicas
+
+```
+tupla_vazia = ()
+
+tupla2 = ('a', 'b', 'c')
+
+vogais = ('a', 'e', 'i', 'o', 'u')
+
+print(f"Tipo de objeto vogais = {type(vogais)}")
+
+for p, x in enumerate(vogais):
+    print(f"Posição = {p}, Valor = {x}")
 ```
