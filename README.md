@@ -635,4 +635,9 @@ Para instalar a biblioteca
 ```
 $ pip install numpy
 ```
-im
+
+No arquivo
+
+```
+import numpy as np
+```
