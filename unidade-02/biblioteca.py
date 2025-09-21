@@ -1,6 +1,7 @@
-# corrigir código
+# importar biblioteca matplotlib
+import matplotlib.pyplot as plt
 
-# criar a classe livro
+# cria a classe Livros
 class Livro:
     def __init__(self, titulo, autor, genero, quantidade):
         self.titulo = titulo
@@ -8,52 +9,73 @@ class Livro:
         self.genero = genero
         self.quantidade = quantidade
 
-# criar um array vazio para receber os livros
-livros = []
+    def __str__(self):
+        return f"{self.titulo} por {self.autor} * {self.genero} * {self.quantidade} unidades"
 
-# cadastrar um novo livro
+
+# cria lista para receber os livros
+estante = []
+
+
+# cria função para cadastrar livros
 def cadastrar_livro(titulo, autor, genero, quantidade):
-    novo_livro = Livro(input('titulo, autor, genero, quantidade'))
-    livros.append(novo_livro)
-    print(f'{titulo} foi adicionado com sucesso!')
-    return
+    novo_livro = Livro(titulo, autor, genero, quantidade)
+    estante.append(novo_livro)
+    print(f"O livro {titulo} foi cadastrado com sucesso!")
 
-# listar todos os livros
+
+# função para listar todos os livros
 def listar_livros():
-    print()
-    for livro in livros:
+    print("\nLivros na estante:")
+    for livro in estante:
         print(livro)
-    return
 
-# buscar livro
-def buscar_livro():
-    livro_procurado = input('Informe o título a ser buscado: ')
-    livros_encontrados = []
 
-    for livro in livros:
-        if livro['titulo'] == livro_procurado:
-            livros_encontrados.append(livro)
-            print(livros_encontrados)
-            return
-        else:
-            print('Desculpe, ainda não temos esse livro em nosso acervo!')
-            return
+#   Busca um livro na estante pelo título, de forma case-insensitive.
+#   Retorna o objeto Livro se encontrado, ou None caso contrário.
+def buscar_livro_por_titulo(titulo_busca):
+    titulo_normalizado = titulo_busca.casefold()
 
-def main():
-    option = 9
+    livro_encontrado = next(
+        (livro for livro in estante if livro.titulo.casefold() == titulo_normalizado),
+        None
+    )
+    return livro_encontrado
 
-    while option != 0:
-        print('Menu: 1: Cadastrar | 2: Listar | 3: Buscar | 0: Sair')
-        option = int(input())
-        if option == 1:
-            cadastrar_livro()
-        elif option == 2:
-            listar_livros()
-        elif option == 3:
-            buscar_livro()
-        elif option == 0:
-            print('Encerrar sistema...')
-            break
 
-print('BIBLIOTECA DIGITAL')
-main()
+# adicionar livros à estante
+cadastrar_livro('Harry Potter e a Pedra Filosofal', 'J. K. Rowlling', 'fantasia', 35)
+cadastrar_livro('Percy Jackson e o Ladrão de Raios', 'Rick Hyodan', 'fantasia', 23)
+cadastrar_livro('O Senhor dos Anéis - A Sociedade do Anel', 'J. R. R. Tolkien', 'fantasia', 19)
+
+# listar os livros na estante
+listar_livros()
+
+# testes de uso da nova função de busca:
+print("\n--- Testando a função de busca ---")
+
+# teste 1: Título com correspondência exata
+titulo_exato = 'Harry Potter e a Pedra Filosofal'
+livro = buscar_livro_por_titulo(titulo_exato)
+if livro:
+    print(f"\nLivro encontrado: {livro}")
+else:
+    print(f"\nLivro '{titulo_exato}' não encontrado.")
+
+# teste 2: Título com capitalização diferente
+titulo_diferente = 'percy jackson e o ladrão de raios'
+livro = buscar_livro_por_titulo(titulo_diferente)
+if livro:
+    print(f"\nLivro encontrado (busca case-insensitive): {livro}")
+else:
+    print(f"\nLivro '{titulo_diferente}' não encontrado.")
+
+# teste 3: Título inexistente
+titulo_inexistente = 'O Ladrão de Raios'
+livro = buscar_livro_por_titulo(titulo_inexistente)
+if livro is None:  # Verificação explícita para None
+    print(f"\nLivro '{titulo_inexistente}' não encontrado. O retorno foi: {livro}")
+else:
+    print(f"\nLivro encontrado (busca inesperada): {livro}")
+
+
