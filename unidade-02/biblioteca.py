@@ -1,6 +1,7 @@
 # importar biblioteca matplotlib
 import matplotlib.pyplot as plt
 
+
 # cria a classe Livros
 class Livro:
     def __init__(self, titulo, autor, genero, quantidade):
@@ -16,11 +17,15 @@ class Livro:
 # cria lista para receber os livros
 estante = []
 
+# cria lista de categorias por gênero
+categorias = []
+
 
 # cria função para cadastrar livros
 def cadastrar_livro(titulo, autor, genero, quantidade):
     novo_livro = Livro(titulo, autor, genero, quantidade)
     estante.append(novo_livro)
+    categorias.append(genero)
     print(f"O livro {titulo} foi cadastrado com sucesso!")
 
 
@@ -47,6 +52,9 @@ def buscar_livro_por_titulo(titulo_busca):
 cadastrar_livro('Harry Potter e a Pedra Filosofal', 'J. K. Rowlling', 'fantasia', 35)
 cadastrar_livro('Percy Jackson e o Ladrão de Raios', 'Rick Hyodan', 'fantasia', 23)
 cadastrar_livro('O Senhor dos Anéis - A Sociedade do Anel', 'J. R. R. Tolkien', 'fantasia', 19)
+cadastrar_livro('Romeu e Julieta', 'Shakespeare', 'romance', 21)
+cadastrar_livro('Nelson Mandela - Uma longa Jornada para Liberdade', 'Nelson Mandela', 'biogradia', 20)
+cadastrar_livro('Cinquenta Tons de Cinza', 'E. L. James', 'romance', 51)
 
 # listar os livros na estante
 listar_livros()
@@ -78,4 +86,22 @@ if livro is None:  # Verificação explícita para None
 else:
     print(f"\nLivro encontrado (busca inesperada): {livro}")
 
+# cria um gráfico de livros por genero
+# categorias = list(set(categorias))
+categorias.sort()
 
+# conta livros por gênero
+contagem_por_categoria = [categorias.count(categoria) for categoria in categorias]
+
+# cria um gráfico de barras
+plt.bar(categorias, contagem_por_categoria, color='lightgreen')
+plt.xlabel('Gênero do livro')
+plt.ylabel('Número de livros')
+plt.title('Distribuição de livros por gênero')
+
+# adiciona rótulos aos pontos de dados
+for i, valor in enumerate(contagem_por_categoria):
+    plt.text(categorias[i], valor, str(valor), ha='center', va='bottom')
+
+plt.grid(True)
+plt.show()
