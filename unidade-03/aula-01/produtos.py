@@ -9,7 +9,7 @@ cursor = conn.cursor()
 # 3. criar tabela com SQL
 create_table = ''' 
 CREATE TABLE IF NOT EXISTS Produtos(
-    id INTEGER PRYMARY KEY,
+    id INTEGER PRYMARY KEY, 
     nome TEXT NOT NULL,
     preco TEXT NOT NULL,
     estoque INTEGER

@@ -4,14 +4,14 @@ import sqlite3
 
 conn = sqlite3.connect('contatos.db')
 cursor = conn.cursor()
-cursor.execute("""
-CREATE TABLE IS NOT EXISTS Contatos(
+cursor.execute('''
+CREATE TABLE IF NOT EXISTS Contatos(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT,
     email TEXT,
     telefone TEXT
     )
-""")
+''')
 
 dados_exemplo = [
     ('Izabel', 'izamerces@hotmail.com', '1197750663'),
@@ -40,7 +40,7 @@ conn.commit()
 # DELETE (Exclusão do contato com ID 1)
 
 contato_id_para_excluir = 1
-cursor.execute('DELETE FROM Contatos WHERE id = ?', (contato_id_para_excluir))
+cursor.execute('DELETE FROM Contatos WHERE id = ?', contato_id_para_excluir)
 conn.commit()
 
 # Fechando conexão
