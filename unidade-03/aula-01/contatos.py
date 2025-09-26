@@ -4,14 +4,14 @@ import sqlite3
 
 conn = sqlite3.connect('contatos.db')
 cursor = conn.cursor()
-cursor.execute('''
-    CREATE TABLE IS NOT EXISTS Contatos(
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        nome TEXT,
-        email TEXT,
-        telefone TEXT
+cursor.execute("""
+CREATE TABLE IS NOT EXISTS Contatos(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT,
+    email TEXT,
+    telefone TEXT
     )
-''')
+""")
 
 dados_exemplo = [
     ('Izabel', 'izamerces@hotmail.com', '1197750663'),
@@ -24,8 +24,8 @@ conn.commit()
 
 # READ (leitura e exibição dos dados)
 
-cursor.execute('SELECT * FROM CONTATOS')
-contatos = cursor.fetchall
+cursor.execute('SELECT * FROM Contatos')
+contatos = cursor.fetchall()
 print('Contatos:')
 for contato in contatos:
     print(contato)
