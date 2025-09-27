@@ -40,7 +40,7 @@ conn.commit()
 # DELETE (Exclusão do contato com ID 1)
 
 contato_id_para_excluir = 1
-cursor.execute('DELETE FROM Contatos WHERE id = ?', contato_id_para_excluir)
+cursor.execute('DELETE FROM Contatos WHERE id = ?', (contato_id_para_excluir))
 conn.commit()
 
 # Fechando conexão
